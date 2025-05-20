@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+    <title>Вхід / Реєстрація</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+<nav class="main-nav">
+  <ul>
+    <li><a href="index.html">Головна</a></li>
+    <li><a href="login.html">Вхід</a></li>
+    <li><a href="tasks.html">Завдання</a></li>
+    <li><a href="analytics.html">Аналітика</a></li>
+    <li><a href="settings.html">Налаштування</a></li>
+    <li><a href="support.html">Підтримка</a></li>
+  </ul>
+</nav>
+
+
+  <h1>Вхід</h1>
+  <form onsubmit="event.preventDefault(); location.href='tasks.html';">
+    <label for="login-username">Логін:</label><br>
+    <input type="text" id="login-username" required><br><br>
+    <label for="login-password">Пароль:</label><br>
+    <input type="password" id="login-password" required><br><br>
+    <button type="submit" style="padding: 10px 20px;">Увійти</button>
+  </form>
+
+  <hr>
+
+  <h1>Реєстрація</h1>
+  <form onsubmit="event.preventDefault(); location.href='tasks.html';">
+    <label for="reg-username">Логін:</label><br>
+    <input type="text" id="reg-username" required><br><br>
+    <label for="reg-email">Email:</label><br>
+    <input type="email" id="reg-email" required><br><br>
+    <label for="reg-password">Пароль:</label><br>
+    <input type="password" id="reg-password" required><br><br>
+    <button type="submit" style="padding: 10px 20px;">Зареєструватися</button>
+  </form>
+
+  <br>
+  <button style="padding: 10px 20px;" onclick="location.href='support.html'">Підтримка / Контакти</button>
+</body>
+</html>

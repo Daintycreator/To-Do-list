@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Список завдань</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tasks.css">
+  
+  <style>
+    .nav-buttons {
+      margin-top: 20px;
+    }
+    .nav-buttons button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+<nav class="main-nav">
+  <ul>
+    <li><a href="index.html">Головна</a></li>
+    <li><a href="login.html">Вхід</a></li>
+    <li><a href="tasks.html">Завдання</a></li>
+    <li><a href="analytics.html">Аналітика</a></li>
+    <li><a href="settings.html">Налаштування</a></li>
+    <li><a href="support.html">Підтримка</a></li>
+  </ul>
+</nav>
+
+
+  <h2>Мої завдання</h2>
+  
+  <ul id="taskList"></ul>
+
+  <form id="taskForm">
+    <input type="text" id="taskInput" placeholder="Нове завдання" required>
+    <input type="date" id="taskDeadline">
+    <select id="taskPriority">
+      <option value="low">Низький пріоритет</option>
+      <option value="medium">Середній пріоритет</option>
+      <option value="high">Високий пріоритет</option>
+    </select>
+    <button type="submit">Додати</button>
+  </form>
+
+  <h3>Фільтр</h3>
+  <select>
+    <option>Усі</option>
+    <option>Активні</option>
+    <option>Виконані</option>
+    <option>Прострочені</option>
+  </select>
+  <input type="text" placeholder="Пошук завдань">
+
+  <!-- Кнопки-посилання -->
+  <div class="nav-buttons">
+    <button onclick="location.href='index.html'">Головна</button>
+    <button onclick="location.href='login.html'">Вхід</button>
+    <button onclick="location.href='settings.html'">Налаштування</button>
+    <button onclick="location.href='analytics.html'">Аналітика</button>
+    <button onclick="location.href='support.html'">Підтримка</button>
+  </div>
+
+  <script>
+    const taskForm = document.getElementById('taskForm');
+    const taskList = document.getElementById('taskList');
+
+    taskForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const taskInput = document.getElementById('taskInput');
+      const taskDeadline = document.getElementById('taskDeadline');
+      const taskPriority = document.getElementById('taskPriority');
+
+      const li = document.createElement('li');
+      li.classList.add(taskPriority.value);
+      li.innerHTML = `
+        ${taskInput.value} - ${taskDeadline.value}
+        <button class="completeBtn">Позначити виконаним</button>
+        <button class="deleteBtn">Видалити</button>
+      `;
+      
+      taskList.appendChild(li);
+
+      taskInput.value = '';
+      taskDeadline.value = '';
+      taskPriority.value = 'low';
+
+      li.querySelector('.completeBtn').addEventListener('click', function () {
+        li.style.textDecoration = 'line-through';
+      });
+
+      li.querySelector('.deleteBtn').addEventListener('click', function () {
+        taskList.removeChild(li);
+      });
+    });
+  </script>
+</body>
+</html>
+
+

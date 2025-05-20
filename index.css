@@ -1,0 +1,101 @@
+/* Загальні стилі для головної сторінки */
+
+/* Логотип у правому верхньому куті */
+/* Лого у правому верхньому куті */
+.top-logo {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+}
+
+.top-logo:hover {
+    transform: scale(1.1);
+}
+
+
+/* Контейнер */
+.container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 50px 120px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+/* Анімація з'явлення */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Заголовок */
+h1 {
+    font-size: 3em;
+    color: #ff6f61;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(255, 111, 97, 0.3);
+}
+
+/* Опис */
+p {
+    font-size: 1.25em;
+    color: #4e342e;
+    margin-bottom: 30px;
+}
+
+/* Кнопки */
+button {
+    padding: 14px 28px;
+    margin: 10px 15px;
+    font-size: 1.1em;
+    border-radius: 14px;
+    background: #ffb74d;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background: #ffa726;
+    transform: scale(1.05);
+}
+
+/* Стилізація відео */
+/* Стилізація відео без окремого контейнера */
+iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    margin-top: 30px;
+}
+
+
+/* Адаптивність */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+
+
+
+
